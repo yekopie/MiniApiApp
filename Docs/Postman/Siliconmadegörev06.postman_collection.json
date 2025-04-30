@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "05bfe560-4623-474e-9e53-59ec3dd9e1f5",
+		"name": "Siliconmadegörev06",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44235006",
+		"_collection_link": "https://zehra-2537782.postman.co/workspace/5d9cbd01-31ac-4601-8d03-17649a1bd747/collection/44235006-05bfe560-4623-474e-9e53-59ec3dd9e1f5?action=share&source=collection_link&creator=44235006"
+	},
+	"item": [
+		{
+			"name": "GetAllStudents",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetStudentById",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "CreateStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Ali\",\r\n  \"lastName\": \"Kaya\",\r\n  \"schoolNumber\": 77,\r\n  \"lesson\": \"12/A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateStudent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\t\r\n\r\n{\r\n  \r\n  \"firstName\": \"Ali\",\r\n  \"lastName\": \"Çelik\",\r\n  \"schoolNumber\":993,\r\n  \"lesson\": \"12/A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}4",
+					"host": [
+						"{{base_url}}4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteStudent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}2",
+					"host": [
+						"{{base_url}}2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://localhost:7023/api/Students",
+			"type": "string"
+		}
+	]
+}

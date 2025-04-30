@@ -1,0 +1,6 @@
+@SMGorev6_HostAddress = http://localhost:5063
+
+GET {{SMGorev6_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
