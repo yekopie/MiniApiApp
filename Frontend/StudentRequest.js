@@ -1,28 +1,20 @@
-const baseUrl = "https://localhost:7115/api/";
-const studentsRoute = baseUrl + "Students/";
+const BASE_URL = "https://localhost:7115/api/Students"; 
 
+export async function getAllStudents() {
+    const response = await axios.get(BASE_URL);     
+    return response.data;
+}
 
-export let getAllStudents = async () => {
-    const res = await axios.get(baseUrl + "Students/");
-    return res.data;
-};
+export async function postStudent(student) {
+    const response = await axios.post(BASE_URL, student);
+    return response.data;
+}
 
-export let getStudentById = async (id) => {
-    const res = await axios.get(studentsRoute + id);
-    return res.data;
-};
+export async function updateStudent(id, student) {
+    const response = await axios.put(`${BASE_URL}/${id}`, student);
+    return response.data;
+}
 
-export let postStudent = async (student) => {
-    const res = await axios.post(studentsRoute, student)
-    return res.data;
-};
-
-export let updateStudent = async (id, student) => {
-    const res = await axios.put(studentsRoute + id, student);
-    return res.data;
-};
-
-export let deleteStudent = async (id) => {
-    const res = await axios.delete(studentsRoute + id);
-    return res.data;
-};
+export async function deleteStudent(id) {
+    await axios.delete(`${BASE_URL}/${id}`);
+}

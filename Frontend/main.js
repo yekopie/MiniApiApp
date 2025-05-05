@@ -1,116 +1,72 @@
-import { getAllStudents, postStudent, updateStudent, deleteStudent } from './StudentRequest.js';
-import { handleError, deleteStudentRowInTable, updateStudentRowInTable, addStudentRowInTable, addAlert } from './tool.js';
+import { getAllStudents } from './StudentRequest.js';
+import {
+    handleError,
+    handleStudentAction,
+    addStudentRowInTable,
+    clearStudentForm,
+    fillStudentForm,
+    studentDOM,
+} from './tool.js';
 
 const table = document.getElementById("tableBody");
-const studentFirstNameInModal = document.getElementById("InputFirstName");
-const studentLastNameInModal = document.getElementById("InputLastName");
-const studentschoolNumberInModal = document.getElementById("InputSchoolNumber");
-const studentlessonInModal = document.getElementById("InputLesson");
-const modalSaveChanges = document.getElementById("saveChanges");
-const studentModal = new bootstrap.Modal(document.getElementById("studentModal"));
+const form = document.getElementById("studentForm");
+const studentModal = studentDOM.studentModal;
 
+// Sayfa yüklendiğinde öğrencileri çek
 window.addEventListener("DOMContentLoaded", async () => {
     try {
         const students = await getAllStudents();
-
-        students.forEach(student => {
-            addStudentRowInTable(table, student);
-        });
+        students.forEach(student => addStudentRowInTable(table, student));
     } catch (error) {
         handleError(error);
     }
-    //addAlert("merhaba", "success");
 });
 
-document.getElementById("create").addEventListener("click", async (event) => {
-    const target = event.target;
-    if (target.closest('.btn-create')) {
+// "Add Student" butonuna tıklanınca modal'ı aç
+document.getElementById("create").addEventListener("click", () => {
+    studentDOM.modalTitle.textContent = "Add Student";
+    clearStudentForm();
+    form.removeAttribute("data-editing-id");
+    studentModal.show();
+});
 
-        document.getElementById("modalTitle").textContent = "Add Student";
-        studentModal.show();
+// Form submit olduğunda create ya da update işlemi yap
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-        modalSaveChanges.onclick = async () => {
-            const createToStudent = {
-                firstName: studentFirstNameInModal.value,
-                lastName: studentLastNameInModal.value,
-                schoolNumber: parseInt(studentschoolNumberInModal.value),
-                lesson: studentlessonInModal.value
-            };
+    const isUpdate = form.hasAttribute("data-editing-id");
+    const id = isUpdate ? parseInt(form.dataset.editingId) : null;
 
-            try {
-                await postStudent(createToStudent);
-                addStudentRowInTable(createToStudent);
-                addAlertalert("Ekleme başarılı.", "success");
-            } catch (error) {
-                handleError(error);
-            }
-        };
-    }
-})
+    await handleStudentAction(isUpdate ? "update" : "create", id);
+    form.removeAttribute("data-editing-id");
+});
 
+// Edit veya delete butonlarına tıklanınca yapılacaklar
 table.addEventListener("click", async (event) => {
     const target = event.target;
 
-
+    // Edit butonu tıklandıysa
     if (target.closest('.btn-edit')) {
-        document.getElementById("modalTitle").textContent = "Update Student";
-        studentModal.show();
         const row = target.closest("tr");
+        const id = parseInt(row.dataset.id);
         const cells = row.querySelectorAll("td");
-        let id = parseInt(cells[0].textContent);
-        studentFirstNameInModal.value = cells[1].textContent;
-        studentLastNameInModal.value = cells[2].textContent;
-        studentschoolNumberInModal.value = cells[3].textContent;
-        studentlessonInModal.value = cells[4].textContent;
 
+        fillStudentForm({
+            firstName: cells[1].textContent,
+            lastName: cells[2].textContent,
+            schoolNumber: cells[3].textContent,
+            lesson: cells[4].textContent
+        });
 
-        modalSaveChanges.onclick = async () => {
-            const updateToStudent = {
-                firstName: studentFirstNameInModal.value,
-                lastName: studentLastNameInModal.value,
-                schoolNumber: parseInt(studentschoolNumberInModal.value),
-                lesson: studentlessonInModal.value
-            };
-            try {
-                await updateStudent(id, updateToStudent);
-                updateStudentRowInTable(row, updateToStudent);
-                addAlert("Güncelleme başarılı.", "success");
-            } catch (error) {
-                handleError(error);
-            }
-        };
+        studentDOM.modalTitle.textContent = "Update Student";
+        form.setAttribute("data-editing-id", id);
+        studentModal.show();
     }
 
+    // Delete butonu tıklandıysa
     if (target.closest('.btn-delete')) {
         const row = target.closest("tr");
-        const cells = row.querySelectorAll("td");
-        let id = parseInt(cells[0].textContent);
-        try {
-            await deleteStudent(id)
-            deleteStudentRowInTable(row);
-            addAlert("Silme işlemi başarılı.", "success");
-        } catch (error) {
-            handleError(error);
-        }
-
+        const id = parseInt(row.dataset.id);
+        await handleStudentAction("delete", id);
     }
 });
-
-/*
-// ALL METHOD CONTROLSlet newStudent = {FirstName :"Yunus Emre", LastName: "Kalaycı", SchoolNumber: 37, Lesson : "12/C"}
-// GET
-getAllStudents();
-getStudentByID(5);
-// POST
-
-let newStudent1 = {FirstName :"Zehra", LastName: "Altınkayak", SchoolNumber: 2134, Lesson : "12/C"}
-postStudent(newStudent);
-postStudent(newStudent);
-
-// uPDATE
-updateStudent(1, newStudent1);
-
-//DELETE
-deleteStudent(2);
-
-getAllStudents();*/

@@ -30,3 +30,8 @@ C:\Users\yekel\OneDrive\Masaüstü\Siliconmade\project-root\Backend\SMGorev6\obj
 C:\Users\yekel\OneDrive\Masaüstü\Siliconmade\project-root\Backend\SMGorev6\obj\Debug\net8.0\StudentsManagerApi.pdb
 C:\Users\yekel\OneDrive\Masaüstü\Siliconmade\project-root\Backend\SMGorev6\obj\Debug\net8.0\StudentsManagerApi.genruntimeconfig.cache
 C:\Users\yekel\OneDrive\Masaüstü\Siliconmade\project-root\Backend\SMGorev6\obj\Debug\net8.0\ref\StudentsManagerApi.dll
+C:\Users\yekel\OneDrive\Masaüstü\Siliconmade\project-root\Backend\SMGorev6\bin\Debug\net8.0\StudentsManagerApi.staticwebassets.endpoints.json
+C:\Users\yekel\OneDrive\Masaüstü\Siliconmade\project-root\Backend\SMGorev6\obj\Debug\net8.0\StudentsManagerApi.sourcelink.json
+C:\Users\yekel\OneDrive\Masaüstü\Siliconmade\project-root\Backend\SMGorev6\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\yekel\OneDrive\Masaüstü\Siliconmade\project-root\Backend\SMGorev6\obj\Debug\net8.0\staticwebassets\msbuild.StudentsManagerApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\yekel\OneDrive\Masaüstü\Siliconmade\project-root\Backend\SMGorev6\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

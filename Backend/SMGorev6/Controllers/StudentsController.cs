@@ -48,7 +48,7 @@ namespace SMGorev6.Controllers
         [HttpPost]
         public IActionResult CreateStudent([FromBody] StudentDto student)
         {
-            if(IsStudentNumberExist(student.SchoolNumber))
+            if(_students.Any(s => s.SchoolNumber == student.SchoolNumber ))
                 return new CreatedResult { StatusCode = 201, Value = Messages.SchoolNumbersAldreadyExist };
 
             if(!ModelState.IsValid)
@@ -68,7 +68,7 @@ namespace SMGorev6.Controllers
         [HttpPut("{id}")]
         public IActionResult Update([FromRoute] int id, [FromBody] StudentDto student)
         {
-            if (IsStudentNumberExist(student.SchoolNumber))
+            if (_students.Any(s => s.SchoolNumber == student.SchoolNumber && s.Id != id))
                 return new CreatedResult { StatusCode = 201, Value = Messages.SchoolNumbersAldreadyExist };
 
 
@@ -99,12 +99,6 @@ namespace SMGorev6.Controllers
             _students.Remove(deleteToStudent);
 
             return Ok(Messages.DeletedSuccesfully);
-        }   
-        private bool IsStudentNumberExist(int schoolNumber)
-        {
-            
-            return _students.Any(x => x.SchoolNumber == schoolNumber);
-        }
-        
+        }       
     }
 }
