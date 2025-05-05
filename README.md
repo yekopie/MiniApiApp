@@ -17,7 +17,7 @@ Frontend tarafı da basit HTML/JS/Bootstrap ile çalışıyor.
 ### 2. 🖥️ Backend API’yi Çalıştır
 Backend servislerini kullanabilmek için, frontend tarafındaki StudentRequest.js dosyasındaki baseUrl'yi kendi ortamınıza göre ayarlayın:
 
-  const baseUrl = "https://localhost:{PORT}/api/";
+  const BASE_URL = "https://localhost:{PORT}/api/";
   {PORT} kısmını backend’in çalıştığı porta göre güncelleyin.
 
 Ayrıca Postman koleksiyonunda kullanılan {{base_url}} ortam değişkenini de aynı şekilde ayarlamalısınız:
