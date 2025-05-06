@@ -32,7 +32,7 @@ Aşağıdaki adımlarla tarayıcıdan arayüzü açabilirsiniz:
 - Ya da bir canlı sunucu ile (örneğin Live Server) tarayıcıda çalıştırın
 - Öğrenci ekleme, düzenleme, silme ve listeleme işlemlerini görsel arayüz üzerinden gerçekleştirin
 
-![Frontend Arayüzü](Docs/TablePreview.png)
+![Frontend Arayüzü](Docs/FormValidation.png)
 
 ## Dökümantasyon
 
