@@ -30,15 +30,30 @@ document.getElementById("create").addEventListener("click", () => {
     studentModal.show();
 });
 
+const inputs = form.querySelectorAll("input");
+
+inputs.forEach(input => {
+    input.addEventListener("input", () => {
+        if (form.checkValidity()) {
+            form.classList.remove("was-validated"); // Eğer form geçerliyse önceki validasyon sınıfını kaldır
+        } else {
+            form.classList.add("was-validated"); // Geçersizse sınıfı ekleyerek kullanıcıyı uyar
+        }
+    });
+});
+
 // Form submit olduğunda create ya da update işlemi yap
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const isUpdate = form.hasAttribute("data-editing-id");
-    const id = isUpdate ? parseInt(form.dataset.editingId) : null;
-
-    await handleStudentAction(isUpdate ? "update" : "create", id);
-    form.removeAttribute("data-editing-id");
+form.addEventListener("submit", async (event) => {
+    if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+    }else{
+        const isUpdate = form.hasAttribute("data-editing-id");
+        const id = isUpdate ? parseInt(form.dataset.editingId) : null;
+    
+        await handleStudentAction(isUpdate ? "update" : "create", id);
+        form.removeAttribute("data-editing-id");
+    }
 });
 
 // Edit veya delete butonlarına tıklanınca yapılacaklar
