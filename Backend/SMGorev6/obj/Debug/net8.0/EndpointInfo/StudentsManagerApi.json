@@ -94,6 +94,26 @@
         "tags": [
           "Students"
         ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 25
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -145,13 +165,11 @@
           "firstName": {
             "maxLength": 50,
             "minLength": 3,
-            "pattern": "^[a-zA-ZçÇğĞıİöÖşŞüÜ]+( [a-zA-ZçÇğĞıİöÖşŞüÜ]+)*$",
             "type": "string"
           },
           "lastName": {
             "maxLength": 50,
             "minLength": 2,
-            "pattern": "^[a-zA-ZçÇğĞıİöÖşŞüÜ]+$",
             "type": "string"
           },
           "schoolNumber": {
@@ -161,9 +179,8 @@
             "format": "int32"
           },
           "lesson": {
-            "maxLength": 10,
+            "maxLength": 20,
             "minLength": 3,
-            "pattern": "^[a-zA-ZçÇğĞıİöÖşŞüÜ0-9/-]+$",
             "type": "string"
           }
         },

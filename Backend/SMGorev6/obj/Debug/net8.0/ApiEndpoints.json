@@ -6,12 +6,23 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "SMGorev6.Controllers.StudentsController",
-    "Method": "CreateStudent",
+    "Method": "CreateStudentAsync",
     "RelativePath": "api/Students",
     "HttpMethod": "POST",
     "IsController": true,
@@ -43,7 +54,7 @@
   },
   {
     "ContainingType": "SMGorev6.Controllers.StudentsController",
-    "Method": "Update",
+    "Method": "UpdateAsync",
     "RelativePath": "api/Students/{id}",
     "HttpMethod": "PUT",
     "IsController": true,

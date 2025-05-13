@@ -1,18 +1,28 @@
 
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+using StudentsManagerApi.Data;
+using System.Threading.Tasks;
 
 namespace SMGorev6
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddCors();
             // Add services to the container.
+            // sql server kullanmak istiyorsan nuget paketini kur 
+            // ve konfigürasyon ayarlarýný ona göre yap ->
+            // (Appsettings'de default olarak mssql tanýmlý)
+            // yaþam süresi default olarak scoped
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlite(builder.Configuration["ConnectionStrings:SQLiteDefault"])
+                );
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+           
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -37,7 +47,13 @@ namespace SMGorev6
 
 
             app.MapControllers();
-
+            using (var scope = app.Services.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                await db.Database.EnsureDeletedAsync();
+                await db.Database.EnsureCreatedAsync();
+                SeedData.Init(db);
+            }
             app.Run();
         }
     }

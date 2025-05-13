@@ -1,8 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SMGorev6.Constants;
 using SMGorev6.DTOs;
 using SMGorev6.Entities;
+using StudentsManagerApi.Data;
+using StudentsManagerApi.Models;
+using System.Threading.Tasks;
 
 namespace SMGorev6.Controllers
 {
@@ -10,49 +14,57 @@ namespace SMGorev6.Controllers
     [ApiController]
     public class StudentsController : ControllerBase
     {
-        public static List<Student> _students = new()
+        private readonly AppDbContext _context;
+        public StudentsController(AppDbContext context)
         {
-            new Student { FirstName = "Ali", LastName = "Kaya", Lesson = "12/A", SchoolNumber = 33 },
-            new Student { FirstName = "Ayşe", LastName = "Yılmaz", Lesson = "11/B", SchoolNumber = 45 },
-            new Student { FirstName = "Mehmet", LastName = "Demir", Lesson = "10/C", SchoolNumber = 27 },
-            new Student { FirstName = "Zeynep", LastName = "Çelik", Lesson = "9/D", SchoolNumber = 12 },
-            new Student { FirstName = "Ahmet", LastName = "Şahin", Lesson = "12/B", SchoolNumber = 56 },
-            new Student { FirstName = "Elif", LastName = "Arslan", Lesson = "11/A", SchoolNumber = 39 },
-            new Student { FirstName = "Hasan", LastName = "Koç", Lesson = "10/B", SchoolNumber = 18 },
-            new Student { FirstName = "Fatma", LastName = "Kurt", Lesson = "9/A", SchoolNumber = 7 },
-            new Student { FirstName = "Emre", LastName = "Öztürk", Lesson = "12/C", SchoolNumber = 61 },
-            new Student { FirstName = "Hülya", LastName = "Aydın", Lesson = "11/C", SchoolNumber = 42 },
-            new Student { FirstName = "Burak", LastName = "Erdoğan", Lesson = "10/D", SchoolNumber = 25 }
-        };
-
-        public StudentsController() { }
+            _context = context;
+        }
 
         [HttpGet("{id}")]
-        public IActionResult GetById([FromRoute]int id)
+        public async Task<IActionResult> GetById([FromRoute]int id)
         {
-            var result = _students.FirstOrDefault(x => x.Id == id);
-            if (result == null) return NotFound(Messages.StudentNotFound);
+            var result = await _context.Students.FindAsync(id);
+            if (result == null)
+                return new ObjectResult(ApiResponse.Error(Messages.StudentNotFound, 404));
 
-            return Ok(result);
+            return new ObjectResult(ApiResponse.Success(result, null, 200));
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] int page = 1, int pageSize = 25)
         {
-            if (!_students.Any())
+            if (!_context.Students.Any())
                 return NoContent();
 
-            return Ok(_students);
+            var totalRecords =await _context.Students.CountAsync();
+            // (int)Math.Ceiling olarak kullanılabilir.
+            var totalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
+
+            // Örn: 5. sayfayı çekeceğiz,
+            // 4*25 atlayacak 100'den sonraki ilk 25 veriyi getirecek
+            var students = await _context.Students
+                .OrderBy(s => s.Id) // Id'ye göre sırala, Default A-Z, Küçükten büyüğe
+                .Skip((page - 1)*pageSize) // atla (page - 1)*pageSize = toplam satır sayısı
+                .Take(pageSize) // Getir
+                .ToListAsync(); // Listele
+            
+            return Ok(new
+            {
+                TotalRecords = totalRecords,
+                TotalPages = totalPages,
+                CurrentPage = page,
+                Students = students
+            });
         }
 
         [HttpPost]
-        public IActionResult CreateStudent([FromBody] StudentDto student)
+        public async Task<IActionResult> CreateStudentAsync([FromBody] StudentDto student)
         {
-            if(_students.Any(s => s.SchoolNumber == student.SchoolNumber ))
-                return new CreatedResult { StatusCode = 201, Value = Messages.SchoolNumbersAldreadyExist };
+            if (!ModelState.IsValid)
+                return new ObjectResult(ApiResponse.Error(Messages.ValidationError));
 
-            if(!ModelState.IsValid)
-                return BadRequest(ModelState);
+            if (_context.Students.Any(s => s.SchoolNumber == student.SchoolNumber ))
+                return new ObjectResult(ApiResponse.Error(Messages.SchoolNumbersAldreadyExist,201));
 
             var CreateToStudent = new Student
             {
@@ -61,44 +73,45 @@ namespace SMGorev6.Controllers
                 Lesson = student.Lesson,
                 SchoolNumber = student.SchoolNumber
             };
-            _students.Add(CreateToStudent);
-
-            return Ok(Messages.CreatedSuccesfully);
+            await _context.Students.AddAsync(CreateToStudent);
+            await _context.SaveChangesAsync();
+            return new ObjectResult(ApiResponse.Success(CreateToStudent));
         }
         [HttpPut("{id}")]
-        public IActionResult Update([FromRoute] int id, [FromBody] StudentDto student)
+        public async Task<IActionResult> UpdateAsync([FromRoute] int id, [FromBody] StudentDto student)
         {
-            if (_students.Any(s => s.SchoolNumber == student.SchoolNumber && s.Id != id))
-                return new CreatedResult { StatusCode = 201, Value = Messages.SchoolNumbersAldreadyExist };
-
-
             if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+                return new ObjectResult(ApiResponse.Error(Messages.ValidationError));
 
-            var UpdateToStudent = _students.FirstOrDefault(x => x.Id == id);
-            if (UpdateToStudent == null) return NotFound(Messages.StudentNotFound);
+            if (await _context.Students.AnyAsync(s => s.SchoolNumber == student.SchoolNumber && s.Id != id))
+                return new ObjectResult(ApiResponse.Error(Messages.SchoolNumbersAldreadyExist, 201));
+
+            var UpdateToStudent = await _context.Students.FindAsync(id);
+            if (UpdateToStudent == null) 
+                return new ObjectResult(ApiResponse.Error(Messages.StudentNotFound, 404));
 
             UpdateToStudent.FirstName = student.FirstName;
             UpdateToStudent.LastName = student.LastName;
             UpdateToStudent.Lesson = student.Lesson;
             UpdateToStudent.SchoolNumber = student.SchoolNumber;
+            await _context.SaveChangesAsync();
 
 
-
-            return Ok(Messages.UpdatedSuccesfully);
+            return new ObjectResult(ApiResponse.Success(UpdateToStudent, Messages.UpdatedSuccesfully));
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete([FromRoute] int id)
+        public async Task<IActionResult> Delete([FromRoute] int id)
         {
-            var deleteToStudent = _students.FirstOrDefault(x => x.Id == id);
+            var deleteToStudent = await _context.Students.FindAsync(id);
 
-            if (deleteToStudent == null) 
-                return NotFound(Messages.StudentNotFound);
+            if (deleteToStudent == null)
+                return new ObjectResult(ApiResponse.Error(Messages.StudentNotFound, 404));
 
-            _students.Remove(deleteToStudent);
+            _context.Remove(deleteToStudent);
 
-            return Ok(Messages.DeletedSuccesfully);
+            return new ObjectResult(ApiResponse.Success(deleteToStudent, Messages.DeletedSuccesfully, 200));
         }       
     }
+
 }

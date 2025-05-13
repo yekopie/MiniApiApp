@@ -3,24 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\studentsmanagerapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\studentsmanagerapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\models\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\models\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\constants\\messages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\constants\\messages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\studentsmanagerapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\studentsmanagerapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\constants\\messages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\constants\\messages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|c:\\users\\yekel\\onedrive\\masa\u00FCst\u00FC\\siliconmade\\project-root\\backend\\smgorev6\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0A57DB4A-6F4B-4E38-999B-249F9853364C}|SMGorev6\\StudentsManagerApi.csproj|solutionrelative:smgorev6\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,27 +55,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StudentsManagerApi.csproj",
-              "DocumentMoniker": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\StudentsManagerApi.csproj",
-              "RelativeDocumentMoniker": "SMGorev6\\StudentsManagerApi.csproj",
-              "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\StudentsManagerApi.csproj",
-              "RelativeToolTip": "SMGorev6\\StudentsManagerApi.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-30T13:36:59.891Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Messages.cs",
-              "DocumentMoniker": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Constants\\Messages.cs",
-              "RelativeDocumentMoniker": "SMGorev6\\Constants\\Messages.cs",
-              "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Constants\\Messages.cs",
-              "RelativeToolTip": "SMGorev6\\Constants\\Messages.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAkAAABTAAAAAAAAAA==",
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Models\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "SMGorev6\\Models\\ApiResponse.cs",
+              "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Models\\ApiResponse.cs",
+              "RelativeToolTip": "SMGorev6\\Models\\ApiResponse.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAUwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T12:12:28.679Z",
+              "WhenOpened": "2025-05-12T08:48:11.398Z",
               "EditorCaption": ""
             },
             {
@@ -66,9 +73,22 @@
               "RelativeDocumentMoniker": "SMGorev6\\Controllers\\StudentsController.cs",
               "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Controllers\\StudentsController.cs",
               "RelativeToolTip": "SMGorev6\\Controllers\\StudentsController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAUwD4AAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAUwCwAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-29T14:59:27.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentDto.cs",
+              "DocumentMoniker": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\DTOs\\StudentDto.cs",
+              "RelativeDocumentMoniker": "SMGorev6\\DTOs\\StudentDto.cs",
+              "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\DTOs\\StudentDto.cs",
+              "RelativeToolTip": "SMGorev6\\DTOs\\StudentDto.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAkwBEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T14:50:33.287Z",
               "EditorCaption": ""
             },
             {
@@ -79,21 +99,86 @@
               "RelativeDocumentMoniker": "SMGorev6\\Program.cs",
               "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Program.cs",
               "RelativeToolTip": "SMGorev6\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABhAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T14:57:47.507Z"
+              "WhenOpened": "2025-04-29T14:57:47.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\appsettings.json",
+              "RelativeDocumentMoniker": "SMGorev6\\appsettings.json",
+              "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\appsettings.json",
+              "RelativeToolTip": "SMGorev6\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-12T07:30:29.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Entities\\Student.cs",
+              "RelativeDocumentMoniker": "SMGorev6\\Entities\\Student.cs",
+              "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Entities\\Student.cs",
+              "RelativeToolTip": "SMGorev6\\Entities\\Student.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T06:36:33.254Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "StudentDto.cs",
-              "DocumentMoniker": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\DTOs\\StudentDto.cs",
-              "RelativeDocumentMoniker": "SMGorev6\\DTOs\\StudentDto.cs",
-              "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\DTOs\\StudentDto.cs",
-              "RelativeToolTip": "SMGorev6\\DTOs\\StudentDto.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAUwBIAAAAAAAAAAAAAAA==",
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Data\\SeedData.cs",
+              "RelativeDocumentMoniker": "SMGorev6\\Data\\SeedData.cs",
+              "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Data\\SeedData.cs",
+              "RelativeToolTip": "SMGorev6\\Data\\SeedData.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T14:50:33.287Z"
+              "WhenOpened": "2025-05-12T07:43:32.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Messages.cs",
+              "DocumentMoniker": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Constants\\Messages.cs",
+              "RelativeDocumentMoniker": "SMGorev6\\Constants\\Messages.cs",
+              "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Constants\\Messages.cs",
+              "RelativeToolTip": "SMGorev6\\Constants\\Messages.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAsAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T12:12:28.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "SMGorev6\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "SMGorev6\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAWwBMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T06:36:02.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StudentsManagerApi.csproj",
+              "DocumentMoniker": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\StudentsManagerApi.csproj",
+              "RelativeDocumentMoniker": "SMGorev6\\StudentsManagerApi.csproj",
+              "ToolTip": "C:\\Users\\yekel\\OneDrive\\Masa\u00FCst\u00FC\\Siliconmade\\project-root\\Backend\\SMGorev6\\StudentsManagerApi.csproj",
+              "RelativeToolTip": "SMGorev6\\StudentsManagerApi.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-30T13:36:59.891Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -14,7 +14,8 @@
         public const string SchoolNumbersAldreadyExist = "Bu numarada öğrenci zaten mevcut";
         public const string StudentNotFound = "Öğrenci bulunamadı";
         public const string UpdatedSuccesfully = "Öğrenci başarıyla güncellendi";
-        public const string CreatedSuccesfully = "Öğğrenci başarıyla oluşturuldu";
+        public const string CreatedSuccesfully = "Öğrenci başarıyla oluşturuldu";
         public const string DeletedSuccesfully = "Öğrenci başarıyla silindi";
+        public const string ValidationError = "Lütfen, öğrenci bilgilerini doğru girdiğinizden emin olun.";
     }
 }
