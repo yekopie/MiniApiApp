@@ -12,7 +12,7 @@ Frontend tarafı da basit HTML/JS/Bootstrap ile çalışıyor.
 ## Kurulum ve Kullanım Talimatları
 
 ### 1. 🚀 Depoyu Klonla
-   git clone https://github.com/yekopie/MiniApiApp.git`
+   git clone https://github.com/yekopie/MiniApiApp
 
 ### 2. 🖥️ Backend API’yi Çalıştır
 Backend servislerini kullanabilmek için, frontend tarafındaki StudentRequest.js dosyasındaki baseUrl'yi kendi ortamınıza göre ayarlayın:
