@@ -1,22 +1,18 @@
-import { getAllStudents } from './StudentRequest.js';
-import {
-    handleError,
-    handleStudentAction,
-    addStudentRowInTable,
-    clearStudentForm,
-    fillStudentForm,
-    studentDOM,
-} from './tool.js';
+import { getAllStudents } from './studentRequest.js';
+import { handleError } from './tool.js';
+import { handleStudentAction } from './StudentActions.js';
+import { clearStudentForm, studentDOM, fillStudentForm} from './studentForm.js';
+import { renderPagination, renderTable } from './pagination.js';
 
-const table = document.getElementById("tableBody");
 const form = document.getElementById("studentForm");
 const studentModal = studentDOM.studentModal;
 
 // Sayfa yüklendiğinde öğrencileri çek
 window.addEventListener("DOMContentLoaded", async () => {
     try {
-        const students = await getAllStudents();
-        students.forEach(student => addStudentRowInTable(table, student));
+        const data = await getAllStudents(1, 25);
+        renderTable(data.students); // tabloyu derle
+        renderPagination(data.totalPages, data.currentPage); // pagination'ı derle
     } catch (error) {
         handleError(error);
     }
@@ -44,13 +40,13 @@ inputs.forEach(input => {
 
 // Form submit olduğunda create ya da update işlemi yap
 form.addEventListener("submit", async (event) => {
+    event.preventDefault()
     if (!form.checkValidity()) {
-        event.preventDefault()
         event.stopPropagation()
-    }else{
+    } else {
         const isUpdate = form.hasAttribute("data-editing-id");
         const id = isUpdate ? parseInt(form.dataset.editingId) : null;
-    
+
         await handleStudentAction(isUpdate ? "update" : "create", id);
         form.removeAttribute("data-editing-id");
     }

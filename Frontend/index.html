@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Students Table</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -72,7 +73,7 @@
   </div>
 
   <div class="container-xl">
-    <div class="table-responsive">
+    <div class="table-responsive bg-secondary">
       <div class="table-wrapper">
         <div class="table-title">
           <div class="row">
@@ -100,24 +101,21 @@
 
           </tbody>
         </table>
-        <!--
-                <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                    <ul class="pagination">
-                        <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a>
-                        </li>
-                    </ul>
-                </div>-->
+
+        <div class="clearfix">
+          <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+          <ul id="pagination-container" class="pagination">
+
+          </ul>
+        </div>
       </div>
     </div>
-    <script type="module" src="StudentRequest.js" defer></script>
+    <script type="module" src="studentForm.js" defer></script>
     <script type="module" src="tool.js" defer></script>
+    <script type="module" src="studentTable.js" defer></script>
+    <script type="module" src="StudentRequest.js" defer></script>
+    <script type="module" src="studentActions.js" defer></script>
+    <script type="module" src="pagination.js" defer></script>
     <script type="module" src="main.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

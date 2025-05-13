@@ -1,8 +1,24 @@
 const BASE_URL = "https://localhost:7115/api/Students"; 
+// basit cache mekanizması
+// Amaç: sunucuya istek yapılıp çekilen verileri, tekrar istek yapmadan client bellekte tutmak
+// Client bellek dolmaması içinde client cache'de tutulacak max sayfa sayısı belirledik
+const CACHE_PAGE_LIMIT = 10;
+let pageCache = {};
+export async function getAllStudents(page = 1, pageSize = 25) {
+    if (Object.keys(pageCache).length > CACHE_PAGE_LIMIT)
+        delete pageCache[Object.keys(pageCache)[0]]; // En eski sayfayı sil
 
-export async function getAllStudents() {
-    const response = await axios.get(BASE_URL);     
-    return response.data;
+    if (pageCache[page]) return pageCache[page];
+    const response = await axios.get(BASE_URL, {
+        params: {
+            page, 
+            pageSize
+        }
+    });     
+    console.log(response)
+    pageCache[page] = response.data  
+
+    return pageCache[page];
 }
 
 export async function postStudent(student) {
